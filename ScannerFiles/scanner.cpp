@@ -4,7 +4,7 @@
 using namespace std;
 
 //=====================================================
-// File scanner.cpp written by: Group Number: ** 
+// File scanner.cpp written by: Group Number: *16* 
 //=====================================================
 
 // --------- DFAs ---------------------------------
