@@ -1,0 +1,4 @@
+*.out
+/ScannerFiles/*.out
+/TranslatorFiles/*.out
+/ParserFiles/*.out
