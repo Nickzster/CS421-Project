@@ -5,10 +5,12 @@
 
 using namespace std;
 
+enum tokentype {ERROR, WORD1, WORD2, PERIOD, VERB, VERBNEG, VERBPAST, VERBPASTNEG, IS, WAS, OBJECT, SUBJECT, DESTINATION, PRONOUN, CONNECTOR, EOFM};
+
 // ** MYTOKEN DFA to be replaced by the WORD DFA
 // ** Done by: Clay Flores
 // ** RE:
-bool word(string s)
+tokentype word(string s)
 {
   int state = 0;
   int charpos = 0;
@@ -210,19 +212,26 @@ bool word(string s)
 	  else if (state == 6 && s[charpos] == 'c')
 		  state = 5;
       else
-	  return(false);
+	  return ERROR;
       charpos++;
     }//end of while
 
   // where did I end up????
-  if ((state == 0) || (state == 6))
-	{ return(true); }  // end in a final state q0 (0) or q0' (6)
-   else return(false);
+	if (state == 0)
+	{ 
+		return WORD1;
+	}
+	else if(state == 6)  // end in a final state q0 (0) or q0' (6)
+	{
+		return WORD2;
+	}
+   	else
+	   return ERROR;
 }
 
 // ** Add the PERIOD DFA here
 // ** Done by: Clay Flores
-bool period(string s)
+tokentype period(string s)
 {
 	int state = 0;
 	int charpos = 0;
@@ -232,19 +241,18 @@ bool period(string s)
 		// logic to say that if the char is a period and there is no next char
 		if ((s[charpos] == '.') && (s[charpos + 1] == '\0'))
 		{
-			return true;
+			return PERIOD;
 		}
 		charpos++;
 	}
-	return false;
+	return ERROR;
 }
 // -----  Tables -------------------------------------
 
 // ** Update the tokentype to be WORD1, WORD2, PERIOD, ERROR, etc.
 // Feel free to add a tokentype for the end-of-file marker.
-enum tokentype {ERROR, WORD1, WORD2, PERIOD, VERB, VERBNEG, VERBPAST, VERBPASTNEG, IS, WAS, OBJECT, SUBJECT, DESTINATION, PRONOUN, CONNECTOR, EOFM};
 
-// ** string tokenName[30] = { }; for the display names of tokens
+ string tokenName[30] = {"ERROR", "WORD1", "WORD2", "PERIOD", "VERB", "VERBNEG", "VERBPAST", "VERBPASTNEG", "IS", "WAS", "OBJECT", "SUBJECT", "DESTINATION", "PRONOUN", "CONNECTOR", "EOFM" }; //for the display names of tokens
 
 // ** Need the reservedwords table to be set up here. 
 // ** Do not require any file input for this.
@@ -253,27 +261,107 @@ enum tokentype {ERROR, WORD1, WORD2, PERIOD, VERB, VERBNEG, VERBPAST, VERBPASTNE
 // these use the pair data structure to have a string in the first slot and a token type in the second
 // a vector of pairs holds them all and is returned by the function
 // note about pairs: they use pairname.first or pairname.second to access elements in them
-vector<pair<string, tokentype>> reservedWords()
+
+struct reservedWord
 {
-	vector<pair<string, tokentype>> reserved[18];
-	reservedWords[0].make_pair("masu", VERB);
-	reservedWords[1].make_pair("masen", VERBNEG);
-	reservedWords[2].make_pair("mashita", VERBPAST);
-	reservedWords[3].make_pair("masendeshita", VERBPASTNEG);
-	reservedWords[4].make_pair("desu", IS);
-	reservedWords[5].make_pair("deshita", WAS);
-	reservedWords[6].make_pair("o", OBJECT);
-	reservedWords[7].make_pair("wa", SUBJECT);
-	reservedWords[8].make_pair("ni", DESTINATION);
-	reservedWords[9].make_pair("watashi", PRONOUN);
-	reservedWords[10].make_pair("anata", PRONOUN);
-	reservedWords[11].make_pair("kare", PRONOUN);
-	reservedWords[12].make_pair("kanojo", PRONOUN);
-	reservedWords[13].make_pair("sore", PRONOUN);
-	reservedWords[14].make_pair("mata", CONNECTOR);
-	reservedWords[15].make_pair("soshite", CONNECTOR);
-	reservedWords[16].make_pair("shikashi", CONNECTOR);
-	reservedWords[17].make_pair("dakara", CONNECTOR);
-	reservedWords[18].make_pair("eofm", EOFM);
-	return reserved;
+	string WORD;
+	tokentype TYPE;
+};
+
+vector <reservedWord> reservedWordsList;
+
+void init()
+{
+	reservedWord r;
+	r.WORD = "masu";
+	r.TYPE = VERB;
+	reservedWordsList.push_back(r);
+
+	r.WORD = "masen";
+	r.TYPE = VERBNEG;
+	reservedWordsList.push_back(r);
+
+	r.WORD = "mashita";
+	r.TYPE = VERBPAST;
+	reservedWordsList.push_back(r);
+
+		
+	r.WORD = "masendeshita";
+	r.TYPE = VERBPASTNEG;
+	reservedWordsList.push_back(r);
+
+		
+	r.WORD = "desu";
+	r.TYPE = IS;
+	reservedWordsList.push_back(r);
+
+		
+	r.WORD = "deshita";
+	r.TYPE = WAS;
+	reservedWordsList.push_back(r);
+
+		
+	r.WORD = "o";
+	r.TYPE = OBJECT;
+	reservedWordsList.push_back(r);
+
+		
+	r.WORD = "wa";
+	r.TYPE = SUBJECT;
+	reservedWordsList.push_back(r);
+
+		
+	r.WORD = "ni";
+	r.TYPE = DESTINATION;
+	reservedWordsList.push_back(r);
+
+		
+	r.WORD = "watashi";
+	r.TYPE = PRONOUN;
+	reservedWordsList.push_back(r);
+
+		
+	r.WORD = "anata";
+	r.TYPE = PRONOUN;
+	reservedWordsList.push_back(r);
+
+		
+	r.WORD = "kare";
+	r.TYPE = PRONOUN;
+	reservedWordsList.push_back(r);
+
+		
+	r.WORD = "kanojo";
+	r.TYPE = PRONOUN;
+	reservedWordsList.push_back(r);
+
+		
+	r.WORD = "sore";
+	r.TYPE = PRONOUN;
+	reservedWordsList.push_back(r);
+
+		
+	r.WORD = "mata";
+	r.TYPE = CONNECTOR;
+	reservedWordsList.push_back(r);
+
+		
+	r.WORD = "soshite";
+	r.TYPE = CONNECTOR;
+	reservedWordsList.push_back(r);
+
+		
+	r.WORD = "shikashi";
+	r.TYPE = CONNECTOR;
+	reservedWordsList.push_back(r);
+
+		
+	r.WORD = "dakara";
+	r.TYPE = CONNECTOR;
+	reservedWordsList.push_back(r);
+
+		
+	r.WORD = "eofm";
+	r.TYPE = EOFM;
+	reservedWordsList.push_back(r);
 }
