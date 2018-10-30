@@ -9,8 +9,15 @@ enum tokentype {ERROR, WORD1, WORD2, PERIOD, VERB, VERBNEG, VERBPAST, VERBPASTNE
 
 // ** MYTOKEN DFA to be replaced by the WORD DFA
 // ** Done by: Clay Flores
-// ** RE:
-tokentype word(string s)
+// ** RE: 
+// (b|g|h|k|m|n|p|r) (y ((a|e|i|o|u|E|I)^+ | (a|e|i|o|u|E|I)^+ n) | (a|e|i|o|u|E|I)^+ | (a|e|i|o|u|E|I)^+ n)
+// (a|e|i|o|u|E|I)^+ | (a|e|o|i|u|E|I)^+ n
+// (d|j|w|y|z) ( (a|e|i|o|u|E|I)^+ | (a|e|i|o|u|E|I)^+ n)
+// s ( h ( (a|e|i|o|u|E|I)^+ | (a|e|i|o|u|E|I)^+ n) ) | ( (a|e|i|o|u|I|E)^+ |  (a|e|i|o|u|I|E)^+ n) )
+// t ( s ( (a|e|i|o|u|I|E)^+ | (a|e|i|o|u|I|E)^+ n) ) ) | ( (a|e|i|o|u|I|E)^+ | (a|e|i|o|u|I|E)^+ n )
+// c h ( (a|e|i|o|u|I|E)^+ | (a|e|i|o|u|I|E)^+ n)
+
+bool word(string s)
 {
   int state = 0;
   int charpos = 0;
@@ -231,7 +238,7 @@ tokentype word(string s)
 
 // ** Add the PERIOD DFA here
 // ** Done by: Clay Flores
-tokentype period(string s)
+bool period(string s)
 {
 	int state = 0;
 	int charpos = 0;

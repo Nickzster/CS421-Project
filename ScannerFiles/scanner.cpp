@@ -28,12 +28,16 @@ int scanner(tokentype& a, string& w)
   fin >> w;
   
   // 2. Call the token functions one after another (if-then-else)
-  tokentype checkWordDFA = word(w);
-  tokentype checkPeriodDFA = period(w);
-  if(checkWordDFA != ERROR) //if it is in the regular DFA
+  if(word(w)) //if it is in the regular DFA
   {
-    //then this is a valid word... 
-    a = checkWordDFA;
+    if(w.at(w.size()-1) == 'I' || w.at(w.size()-1) == 'E') //if the word ends in I or E
+    { //then the expression is WORD2
+      a = WORD2;
+    }
+    else //otherwise, it is WORD1
+    { 
+      a = WORD1;
+    }
     //if it is a reserved word, then overwrite the token type.
     for(int i = 0; i < reservedWordsList.size(); i++)
     {
@@ -45,18 +49,18 @@ int scanner(tokentype& a, string& w)
       }
     }
   }
-  else if(checkPeriodDFA != ERROR) //if it is in the period DFA
+  else if(period(w)) //if it is in the period DFA
   {
-    a = checkPeriodDFA;
-    for(int i = 0; i < reservedWordsList.size(); i++)
-    {
-      reservedWord r = reservedWordsList.at(i);
-      if(r.WORD == w) //if the word is found in the reserved list
-      {
-        a = r.TYPE; //then append its token type
-        break; 
-      }
-    }
+    a = PERIOD;
+    // for(int i = 0; i < reservedWordsList.size(); i++)
+    // {
+    //   reservedWord r = reservedWordsList.at(i);
+    //   if(r.WORD == w) //if the word is found in the reserved list
+    //   {
+    //     a = r.TYPE; //then append its token type
+    //     break; 
+    //   }
+    // }
   }
   else //if it is not found in any of the word DFA's
   {
@@ -105,7 +109,7 @@ int main()
        cout << "========================================" << endl;
        cout << "Type is:" << tokenName[thetype] << endl;
        cout << "Word is:" << theword << endl;   
-      cout << "========================================" << endl << endl;
+       cout << "========================================" << endl << endl;
     }
 
    cout << "End of file is encountered." << endl;
