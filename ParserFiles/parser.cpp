@@ -10,8 +10,12 @@ using namespace std;
 // -----------------------------------------------------
 
 //=================================================
-// File parser.cpp written by Group Number: **
+// File parser.cpp written by Group Number: 16
 //=================================================
+
+// globally declared to be available, as per instructions
+string saved_lexeme;
+string saved_token;
 
 // ----- Utility and Globals -----------------------------------
 
@@ -21,7 +25,40 @@ using namespace std;
 
 // ** Need the updated match and next_token (with 2 global vars)
 // ** Be sure to put the name of the programmer above each function
-// i.e. Done by:
+// next_token(void)
+//    Looks ahead to see what token comes next from the scanner.
+//    HOW: checks first to see if the token_available flag is false.
+//    If so, saved_token gets scanner() result.
+//    and the flag is set true.
+//    A token is grabbed but is not eaten up.
+//    Returns the saved_token
+//   Done by : Clay Flores
+token_type next_token()
+{
+   if (!token_available)					 // if there is no saved token yet
+     { scanner(saved_token, saved_lexeme);	 // call scanner to grab a new token
+       token_available = true;				 // mark that fact that you have saved it
+     }
+   return saved_token;    // return the saved token
+ }
+
+//match(expected)
+//		Checks and eats up the expected token.
+//		HOW: checks to see if expected is different from next_token()
+//		and if so, generates a syntax error and handles the error
+//		else token_available becomes false (eat up) and returns true.
+boolean match(token_type expected)
+{
+	if (next_token() != expected)  // mismatch has occurred with the next token
+	{ // calls a syntax error function here to  generate a syntax error message here and do recovery
+		syntax_error1(token_type thetype);
+	}
+	else  // match has occurred
+	{
+		token_available = false;  // eat up the token
+		return true;              // say there was a match
+	}
+}
 
 
 // ----- RDP functions - one per non-term -------------------
