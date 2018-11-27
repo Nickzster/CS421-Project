@@ -3,6 +3,8 @@ SubmitIt this file with the executable.
 
 Group#:16
 
+***NOTE: compile by: g++ scanner.cpp parser.cpp testdriver.cpp
+
 1.State who did what by indicating: 
   Member A tasks (syntax error functions) - who: Clay Flores
   Member B tasks (match and next_token)- who: Clay Flores
