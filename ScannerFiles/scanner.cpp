@@ -84,7 +84,7 @@ int scanner(tokentype& a, string& w)
 }//the end of scanner
 
 
-
+/*
 // The temporary test driver to just call the scanner repeatedly  
 // This will go away after this assignment
 // DO NOT CHANGE THIS!!!!!! 
@@ -115,5 +115,4 @@ int main()
    cout << "End of file is encountered." << endl;
    fin.close();
 
-}// end
-
+}// end */
