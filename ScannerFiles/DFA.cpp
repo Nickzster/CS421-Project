@@ -5,7 +5,8 @@
 
 using namespace std;
 
-enum tokentype { ERROR, WORD1, WORD2, PERIOD, VERB, VERBNEG, VERBPAST, VERBPASTNEG, IS, WAS, OBJECT, SUBJECT, DESTINATION, PRONOUN, CONNECTOR, EOFM };
+
+enum tokentype {ERROR, WORD1, WORD2, PERIOD, VERB, VERBNEG, VERBPAST, VERBPASTNEG, IS, WAS, OBJECT, SUBJECT, DESTINATION, PRONOUN, CONNECTOR, EOFM};
 
 // ** MYTOKEN DFA to be replaced by the WORD DFA
 // ** Done by: Clay Flores
@@ -19,6 +20,7 @@ enum tokentype { ERROR, WORD1, WORD2, PERIOD, VERB, VERBNEG, VERBPAST, VERBPASTN
 
 bool word(string s)
 {
+
 	int state = 0;
 	int charpos = 0;
 
@@ -234,6 +236,7 @@ bool word(string s)
 	}
 	else
 		return ERROR;
+
 }
 
 // ** Add the PERIOD DFA here
@@ -279,6 +282,7 @@ vector <reservedWord> reservedWordsList;
 
 void init()
 {
+
 	reservedWord r;
 	r.WORD = "masu";
 	r.TYPE = VERB;
@@ -368,7 +372,9 @@ void init()
 	reservedWordsList.push_back(r);
 
 
+
 	r.WORD = "eofm";
 	r.TYPE = EOFM;
 	reservedWordsList.push_back(r);
 }
+
