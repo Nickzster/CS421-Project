@@ -17,35 +17,23 @@ int main()
     init(); //for reserved words list
 	string w;
 	string filename;
-    ifstream fin;
+    //ifstream fin;
 	cout << "Enter the input file name: ";
 	cin >> filename;
-	fin.open(filename.c_str());
+    readFile(filename);
+    int numberOfSentences = 1;
 	while(true)
 	{
-        fin >> w;
-        if (w == "eofm")
-        {
-            break;
-        }
-        while(true)
-        {
-        pushParseQueue(w);
-            if (w == ".")
-            {
-                break;
-            }
-            else
-            {
-                fin>>w;
-            }
-        }
+        cout << "=======================================" << endl << endl;
+        cout << "***READING SENTENCE " << numberOfSentences << "***" <<  endl;
+        cout << endl << "=======================================" << endl;
         S();
-        emptyParseQueue();
+        cout << "***DONE READING SENTENCE " << numberOfSentences << "***" << endl;
+        numberOfSentences++;
 	}	
 	//** calls the <story> to start parsing
 	//** closes the input file 
-    cout << "SUCCESSFULLY PARSED STORY!" << endl;
+    cout << "Something went wrong (called from testdriver:main)" << endl;
 	return 0;
 }// end
  //** require no other input files!

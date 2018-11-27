@@ -4,24 +4,30 @@ SubmitIt this file with the executable.
 Group#:
 
 1.State who did what by indicating: 
-  Member A tasks (syntax error functions) - who:
-  Member B tasks (match and next_token)- who:
-  Member C tasks (main()) who:
-  Who wrote which parser functions? 
+  Member A tasks (syntax error functions) - who: Clay Flores
+  Member B tasks (match and next_token)- who: Clay Flores
+  Member C tasks (main()) who: Nick Zimmermann
+  Who wrote which parser functions? Nick Zimmermann
 
 If the member did not fully contribute to the assigned part, do not list his/her name!!!!!
+We had trouble with one of our group members, Nick Murrin. He was in charge of the syntax error functions,
+but didn't work when he sent them to us, so Clay had to re-write them. 
 
 2.  Each person came to the meeting?
+Yes.
 
 3.  You have included all the required comments? 
    (Grammer rules and Programmer names)
+Yes.
 
 4.  The parser produced correct output for 
     all 6 test cases?
 
+
 5.  What extra credit feature did you include?
     If it is error correction, did you make sure errors.txt
     got produced?
+None. Didn't have time.
 
      
 

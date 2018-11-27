@@ -10,7 +10,20 @@ using namespace std;
 //=====================================================
 
 // --------- DFAs ---------------------------------
+string w;
+ifstream fin;
 
+void readFile(string filename)
+{
+	fin.open(filename.c_str());
+    //fin >> w;
+	cout << "Successfully opened " << filename << " initalizing to: " << w << endl;
+}
+
+void closeFile()
+{
+	fin.close();
+}
 
 // ** MYTOKEN DFA to be replaced by the WORD DFA
 // ** Done by: Clay Flores
@@ -383,7 +396,7 @@ void init()
 
 // ------------ Scaner and Driver ----------------------- 
 
-ifstream fin;  // global stream for reading from the input file
+//ifstream fin;  // global stream for reading from the input file
 
 // Scanner processes only one word each time it is called
 // Gives back the token type and the word itself
