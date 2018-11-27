@@ -23,7 +23,7 @@ using namespace std;
 string saved_lexeme;
 tokentype saved_token;
 bool token_available = false;
-queue parseQueue;
+//queue parseQueue;
 
 string tokenNameB[30] = { "ERROR", "WORD1", "WORD2", "PERIOD", "VERB", "VERBNEG", "VERBPAST", "VERBPASTNEG", "IS", "WAS", "OBJECT", "SUBJECT", "DESTINATION", "PRONOUN", "CONNECTOR", "EOFM" }; //for the display names of tokens
 
@@ -35,23 +35,23 @@ void setSavedLexeme(string lexeme)
 }
 void pushParseQueue(string lexeme)
 {
-	parseQueue.add(lexeme);
+	//parseQueue.add(lexeme);
 }
 
 void emptyParseQueue()
 {
-	while(true)
-	{
-		string temp;
-		if(!parseQueue.isEmpty())
-		{
-			parseQueue.remove(temp);
-		}
-		else
-		{
-			break;
-		}
-	}
+	// while(true)
+	// {
+	// 	string temp;
+	// 	if(!parseQueue.isEmpty())
+	// 	{
+	// 		parseQueue.remove(temp);
+	// 	}
+	// 	else
+	// 	{
+	// 		break;
+	// 	}
+	// }
 }
 // ** Need syntaxerror1 and syntaxerror2 functions (each takes 2 args)
 // ** Be sure to put the name of the programmer above each function
