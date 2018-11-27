@@ -87,9 +87,9 @@ tokentype next_token()
 		cout << "Scanner called using word: " << saved_lexeme << endl;
 		scanner(saved_token, saved_lexeme);	 // call scanner to grab a new token
 		//cout << "Scanner determined that " << saved_lexeme << " is " << tokenNameB[saved_token] << endl;
-		if(!parseQueue.isEmpty())
+		if(!(parseQueue.isEmpty()))
 			parseQueue.remove(saved_lexeme);
-			parseQueue.displayAll();
+			//parseQueue.displayAll();
 		//cout << saved_lexeme << " has been popped off the queue and is now the new saved_lexeme!" << endl;
 		token_available = true;				 // mark that fact that you have saved it
 	}
@@ -128,7 +128,7 @@ bool match(tokentype expected)
 //10 <tense> := VERBPAST  | VERBPASTNEG | VERB | VERBNEG
 void tense()
 {
-	cout << "Processing (tense)" << endl;
+	cout << "***Processing (tense)" << endl;
 	switch(next_token())
 	{
 		case VERBPAST:
@@ -147,6 +147,7 @@ void tense()
 			syntax_error2("tense", saved_lexeme);
 		break;
 	}
+	cout << endl << "***DONE Processing (tense)" << endl << endl;
 }
 //9 <be> ::=   IS | WAS
 void be()
@@ -164,12 +165,14 @@ void be()
 			syntax_error2("be", saved_lexeme);
 		break;
 	}
+	cout << "***DONE Processing (be)" << endl;
 }
 //8 <verb> ::= WORD2
 void verb()
 {
 	cout << "Processing (verb)" << endl;
 	match(WORD2);
+	cout << endl << "***DONE Processing (verb)" << endl << endl;
 }
 //7 <noun> ::= WORD1 | PRONOUN 
 void noun()
@@ -187,6 +190,7 @@ void noun()
 			syntax_error2("noun", saved_lexeme);
 		break;
 	}
+	cout << endl << "***DONE Processing (noun)" << endl << endl;
 }
 //6 <after verb> ::= <tense> PERIOD
 void after_verb()
@@ -194,6 +198,7 @@ void after_verb()
 	cout << "Processing (after_verb)" << endl;
 	tense();
 	match(PERIOD);
+	cout << endl << "***DONE Processing (after_verb)" << endl << endl;
 }
 //5 <after destination> ::= <verb> <after verb> PERIOD
 void after_destination()
@@ -202,6 +207,7 @@ void after_destination()
 	verb();
 	after_verb();
 	match(PERIOD);
+	cout << endl << "***DONE Processing (after_destination)" << endl << endl;
 }
 //4 <after object> ::= <verb> <after verb> | <noun> DESTINATION <after destination>
 void after_object()
@@ -217,6 +223,7 @@ void after_object()
 			match(WORD1);
 			match(DESTINATION);
 			after_destination();
+		break;
 		case PRONOUN:
 			match(PRONOUN);
 			match(DESTINATION);
@@ -226,6 +233,7 @@ void after_object()
 			syntax_error2("after_object", saved_lexeme);
 		break;
 	}
+	cout << endl << "***DONE Processing (after_object)" << endl << endl;
 }
 //3 <after noun> ::= <be> PERIOD  | DESTINATION <after destination> | OBJECT <after object>
 void after_noun()
@@ -254,6 +262,7 @@ void after_noun()
 			syntax_error2("after_noun", saved_lexeme);
 		break;
 	}
+	cout << endl << "***DONE Processing (after_noun)" << endl << endl;
 
 }
 //2 <after subject> ::= <verb> <tense> PEROD | <noun> <after noun>
@@ -280,6 +289,7 @@ void after_subject()
 			syntax_error2("after_subject", saved_lexeme);
 		break;
 	}
+	cout << endl << "***DONE Processing (after_subject)" << endl << endl;
 }
 //1 <s> ::= [CONNECTOR] <noun> SUBJECT <after subject>
 void S()
@@ -293,4 +303,5 @@ void S()
 	noun();
 	match(SUBJECT);
 	after_subject();
+	cout << endl << "***DONE Processing (S)" << endl << endl;
 }
