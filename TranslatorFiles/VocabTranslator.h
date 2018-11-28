@@ -1,3 +1,10 @@
+/*
+VOCABTRANSLATOR HEADER FILE
+VOCAB TRANSLATOR WRITTEN BY NICK ZIMMERMANN.
+Note: Some words are in german / say german... I designed this VocabTranslator to act as a "dictionary" for my german class...
+So I simply made some changes it to do japanese instead.
+*/
+
 #include <iostream>
 #include <list>
 #include <string>
@@ -25,24 +32,19 @@ class VocabTranslator
     private:
         vector <WORDS> Words;
         vector <VERBS> Verbs;
-        //vector <string list> germanVerbs;
 
         int searchForAWord(string);
-        // int searchForAVerb(string);
-        // int searchForASpecificConjugation(string, vector <string> &GermanConjugations);
-        // void displayConjugations(VERBS);
+
     public:
 
     VocabTranslator();
     ~VocabTranslator();
     void write();
     void read();
-    // void addWord(string, string);
-    // void addConjugation(string, vector <string> &GermanConjugations);
-    // //void addWord(string, list);
+
     void printAll();
     string translate(string);
-    // void correction(string,string);
+
 };
 
 #endif

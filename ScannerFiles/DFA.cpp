@@ -5,9 +5,7 @@
 
 using namespace std;
 
-
-enum tokentype {ERROR, WORD1, WORD2, PERIOD, VERB, VERBNEG, VERBPAST, VERBPASTNEG, IS, WAS, OBJECT, SUBJECT, DESTINATION, PRONOUN, CONNECTOR, EOFM};
-
+#include "scanner.h"
 // ** MYTOKEN DFA to be replaced by the WORD DFA
 // ** Done by: Clay Flores
 // ** RE: 
@@ -264,21 +262,13 @@ bool period(string s)
 
 string tokenName[30] = { "ERROR", "WORD1", "WORD2", "PERIOD", "VERB", "VERBNEG", "VERBPAST", "VERBPASTNEG", "IS", "WAS", "OBJECT", "SUBJECT", "DESTINATION", "PRONOUN", "CONNECTOR", "EOFM" }; //for the display names of tokens
 
-																																															   // ** Need the reservedwords table to be set up here. 
-																																															   // ** Do not require any file input for this.
-																																															   // ** a.out should work without any additional files.
-																																															   // these are the hard coded reserved words as well as their token types
-																																															   // these use the pair data structure to have a string in the first slot and a token type in the second
-																																															   // a vector of pairs holds them all and is returned by the function
-																																															   // note about pairs: they use pairname.first or pairname.second to access elements in them
-
-struct reservedWord
-{
-	string WORD;
-	tokentype TYPE;
-};
-
-vector <reservedWord> reservedWordsList;
+// ** Need the reservedwords table to be set up here. 
+// ** Do not require any file input for this.
+// ** a.out should work without any additional files.
+// these are the hard coded reserved words as well as their token types
+// these use the pair data structure to have a string in the first slot and a token type in the second
+// a vector of pairs holds them all and is returned by the function
+// note about pairs: they use pairname.first or pairname.second to access elements in them
 
 void init()
 {
