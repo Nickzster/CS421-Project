@@ -58,7 +58,7 @@ void emptyParseQueue()
 // i.e. Done by: Clay Flores
 void syntax_error1(tokentype thetype, string saved_lexeme)//when match() function does not match
 {
-	cout << "ERROR: expected " << tokenNameB[thetype] << " but found " << tokenNameB[saved_token] <<  endl;
+	cout << "SYNTAX ERROR: expected " << tokenNameB[thetype] << " but found " << saved_lexeme <<  endl;
 	cout << "Exiting Program" << endl;
 	exit(EXIT_FAILURE);
 }
@@ -263,7 +263,7 @@ void after_noun()
 			after_object();
 		break;
 		default:
-			cout << "DEBUG: " << saved_lexeme << " | " << tokenNameB[saved_token] << endl;
+			//cout << "DEBUG: " << saved_lexeme << " | " << tokenNameB[saved_token] << endl;
 			syntax_error2("after_noun", saved_lexeme);
 		break;
 	}
