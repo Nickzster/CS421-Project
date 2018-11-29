@@ -34,18 +34,18 @@ So I simply made some changes it to do japanese instead.
 
     void VocabTranslator::read()
     {
-        ifstream japaneseFile("lexicon.txt"); //german file to read
-        //Read the german file first.
+        ifstream japaneseFile("lexicon.txt"); //Japanese file to read
+        //Read the Japanese file first.
         int japaneseCount = 0;
         if(japaneseFile.is_open()) //if both files exist
         {
             //then read it
             cout << "Reading lexicon.txt..." << endl;
             char japaneseInput[100];
-            while(japaneseFile>>japaneseInput) //read japanese word
+            while(japaneseFile>>japaneseInput) //read Japanese word
             {
                 string jword = japaneseInput;
-                japaneseFile >> japaneseInput; //then read english word
+                japaneseFile >> japaneseInput; //then read English word
                 string eword = japaneseInput;
                 WORDS w;
                 w.GermanWord = jword;
