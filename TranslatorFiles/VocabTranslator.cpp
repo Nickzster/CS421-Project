@@ -2,7 +2,7 @@
 VOCABTRANSLATOR IMPLEMENTATION FILE FILE
 VOCAB TRANSLATOR WRITTEN BY NICK ZIMMERMANN.
 Note: Some words are in german / say german... I designed this VocabTranslator to act as a "dictionary" for my german class...
-So I simply made some changes it to do japanese instead.
+So I simply made some changes (I still have more to do) it to do japanese instead.
 */
 
     
