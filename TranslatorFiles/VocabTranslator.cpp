@@ -110,8 +110,8 @@ So I simply made some changes (I still have more to do) it to do japanese instea
         }
         else
         {
-            cout << wordToTranslate << " isn't in the dictionary..." << endl;
-            return "INVALID";
+            cout << wordToTranslate << " isn't in the dictionary... returning original word..." << endl;
+            return wordToTranslate;
         }
     }
 
