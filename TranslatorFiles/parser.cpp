@@ -23,6 +23,11 @@ tokentype saved_token;
 bool token_available = false;
 //queue parseQueue;
 
+string getCurrentLexeme()
+{
+	return saved_lexeme;
+}
+
 string tokenNameB[30] = { "ERROR", "WORD1", "WORD2", "PERIOD", "VERB", "VERBNEG", "VERBPAST", "VERBPASTNEG", "IS", "WAS", "OBJECT", "SUBJECT", "DESTINATION", "PRONOUN", "CONNECTOR", "EOFM" }; //for the display names of tokens
 
 // ----- Utility and Globals -----------------------------------
@@ -31,10 +36,7 @@ void setSavedLexeme(string lexeme)
 {
 	saved_lexeme = lexeme;
 }
-void pushParseQueue(string lexeme)
-{
-	//parseQueue.add(lexeme);
-}
+
 
 void emptyParseQueue()
 {

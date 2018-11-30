@@ -11,7 +11,8 @@ void syntax_error2(string pFunction, string saved_lexeme);
 tokentype next_token();
 bool match(tokentype expected);
 //10 <tense> := VERBPAST  | VERBPASTNEG | VERB | VERBNEG
-void pushParseQueue(string lexeme);
+
+string getCurrentLexeme();
 
 void emptyParseQueue();
 

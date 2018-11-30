@@ -5,6 +5,7 @@
 #include <vector>
 #include "scanner.h"
 #include "parser.h"
+#include "translator.h"
 
 using namespace std;
 
@@ -18,9 +19,9 @@ int main()
 	string w;
 	string filename;
     //ifstream fin;
-	cout << "Enter the input file name: ";
-	cin >> filename;
-    readFile(filename);
+	// cout << "Enter the input file name: ";
+	// cin >> filename;
+    // readFile(filename);
     int numberOfSentences = 1;
 	while(true)
 	{
