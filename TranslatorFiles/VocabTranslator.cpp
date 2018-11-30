@@ -68,7 +68,7 @@ So I simply made some changes for it to do japanese instead.
             w = Words.at(i);
             cout << w.EnglishWord;
             cout << " - ";
-            cout << w.GermanWord << endl;
+            cout << w.JapaneseWord << endl;
         }
     }
 
@@ -79,7 +79,7 @@ So I simply made some changes for it to do japanese instead.
         {
             WORDS w;
             w = Words.at(i);
-            if(word == w.GermanWord || word == w.EnglishWord)
+            if(word == w.JapaneseWord || word == w.EnglishWord)
             {
                 return i;
             }
@@ -100,9 +100,9 @@ So I simply made some changes for it to do japanese instead.
         }
         if(validReturn && w.EnglishWord == wordToTranslate) //If the word is an english word
         {
-            return w.GermanWord;
+            return w.JapaneseWord;
         }
-        else if(validReturn && w.GermanWord == wordToTranslate) //If the word is a german word
+        else if(validReturn && w.JapaneseWord == wordToTranslate) //If the word is a german word
         {
             return w.EnglishWord;
         }
