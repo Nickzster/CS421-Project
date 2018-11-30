@@ -2,10 +2,8 @@
 VOCABTRANSLATOR IMPLEMENTATION FILE FILE
 VOCAB TRANSLATOR WRITTEN BY NICK ZIMMERMANN.
 Note: Some words are in german / say german... I designed this VocabTranslator to act as a "dictionary" for my german class...
-So I simply made some changes (I still have more to do) it to do japanese instead.
+So I simply made some changes for it to do japanese instead.
 */
-
-    
     #include <iostream>
     #include <list>
     #include <string>
@@ -48,7 +46,7 @@ So I simply made some changes (I still have more to do) it to do japanese instea
                 japaneseFile >> japaneseInput; //then read English word
                 string eword = japaneseInput;
                 WORDS w;
-                w.GermanWord = jword;
+                w.JapaneseWord = jword;
                 w.EnglishWord = eword;
                 this->Words.push_back(w); //Fill the Words array.
                 japaneseCount++;
