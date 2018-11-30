@@ -98,11 +98,11 @@ So I simply made some changes for it to do japanese instead.
             w = this->Words.at(index);
             validReturn = true;
         }
-        if(validReturn && w.EnglishWord == wordToTranslate) //If the word is an english word
+        if(validReturn && w.EnglishWord == wordToTranslate) //If the word is an English word
         {
             return w.JapaneseWord;
         }
-        else if(validReturn && w.JapaneseWord == wordToTranslate) //If the word is a german word
+        else if(validReturn && w.JapaneseWord == wordToTranslate) //If the word is a Japanese word
         {
             return w.EnglishWord;
         }
