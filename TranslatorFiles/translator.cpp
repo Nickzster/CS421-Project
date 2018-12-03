@@ -26,7 +26,7 @@ using namespace std;
 
 
 //    getEword - using the current lexeme, look up the English word
-//               in the Lexicon if it is there -- save the result   
+//               in the Lexicon. If the current lexeme is there , then  save the result   
 //               in saved_E_word.
 string getEword()
 {
