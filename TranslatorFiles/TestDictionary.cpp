@@ -1,17 +1,17 @@
 #include <string>
 #include <iostream>
-#include "VocabTranslator.h"
+#include "Dictionary.h"
 
 using namespace std;
 
-void testTranslate(string wordToTranslate, VocabTranslator &v)
+void testTranslate(string wordToTranslate, Dictionary &v)
 {
     cout << "Word: " << wordToTranslate << " translates to " << v.translate(wordToTranslate) << endl;
 }
 
 int main()
 {
-    VocabTranslator v;
+    Dictionary v;
     string wordToTranslate;
     v.printAll();
     while(true)

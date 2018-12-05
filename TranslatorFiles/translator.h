@@ -2,9 +2,11 @@
 #define __TRANSLATOR_H__
 
 #include <iostream>
+#include <string>
+using std::string;
 
-std::string getEword();
+string getEword();
 
-void gen(line_type);
+void gen(string line);
 
 #endif

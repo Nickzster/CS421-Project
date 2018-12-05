@@ -1,7 +1,7 @@
 /*
-VOCABTRANSLATOR IMPLEMENTATION FILE FILE
+Dictionary IMPLEMENTATION FILE FILE
 VOCAB TRANSLATOR WRITTEN BY NICK ZIMMERMANN.
-Note: Some words are in german / say german... I designed this VocabTranslator to act as a "dictionary" for my german class...
+Note: Some words are in german / say german... I designed this Dictionary to act as a "dictionary" for my german class...
 So I simply made some changes for it to do japanese instead.
 */
     #include <iostream>
@@ -10,10 +10,10 @@ So I simply made some changes for it to do japanese instead.
     #include <fstream>
     #include <ostream>
     #include <istream>
-    #include "VocabTranslator.h"
+    #include "Dictionary.h"
     using namespace std;
 
-    VocabTranslator::VocabTranslator()
+    Dictionary::Dictionary()
     {
         cout << "INITALIZING======================" << endl;
         cout << "calling constructor" << endl;
@@ -21,7 +21,7 @@ So I simply made some changes for it to do japanese instead.
         cout << "=================================" << endl;
         cout << endl;
     }
-    VocabTranslator::~VocabTranslator()
+    Dictionary::~Dictionary()
     {   
         cout << endl;
         cout << "INITALIZING======================" << endl;
@@ -30,7 +30,7 @@ So I simply made some changes for it to do japanese instead.
         cout << "=================================" << endl;
     }
 
-    void VocabTranslator::read()
+    void Dictionary::read()
     {
         ifstream japaneseFile("lexicon.txt"); //Japanese file to read
         //Read the Japanese file first.
@@ -60,7 +60,7 @@ So I simply made some changes for it to do japanese instead.
         japaneseFile.close();
     }
 
-    void VocabTranslator::printAll()
+    void Dictionary::printAll()
     {
         for(int i = 0; i < Words.size(); i++)
         {
@@ -73,7 +73,7 @@ So I simply made some changes for it to do japanese instead.
     }
 
 
-    int VocabTranslator::searchForAWord(string word)
+    int Dictionary::searchForAWord(string word)
     {
         for(int i = 0; i < this->Words.size(); i++)
         {
@@ -87,7 +87,7 @@ So I simply made some changes for it to do japanese instead.
         return -1;
     }
 
-    string VocabTranslator::translate(string wordToTranslate)
+    string Dictionary::translate(string wordToTranslate)
     {
         //First, we search for a vocab word.
         int index = searchForAWord(wordToTranslate);

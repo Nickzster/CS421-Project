@@ -4,6 +4,7 @@
 #include <stdlib.h>
 #include <vector>
 #include "scanner.h"
+#include "translator.h"
 
 using namespace std;
 
@@ -203,6 +204,7 @@ void after_verb()
 {
 	cout << "Processing (after_verb)" << endl;
 	tense();
+	gen("TENSE");
 	match(PERIOD);
 	//cout << endl << "***DONE Processing (after_verb)" << endl << endl;
 }
@@ -211,6 +213,8 @@ void after_destination()
 {
 	cout << "Processing (after_destination)" << endl;
 	verb();
+	getEword();
+	gen("ACTION");
 	after_verb();
 	//cout << endl << "***DONE Processing (after_destination)" << endl << endl;
 }
@@ -220,18 +224,24 @@ void after_object()
 	cout << "Processing (after_object)" << endl;
 	switch(next_token())
 	{
-		case WORD2:
+		case WORD2: //verb
 			match(WORD2);
+			getEword();
+			gen("ACTION");
 			after_verb();
 		break;
-		case WORD1:
+		case WORD1: //noun
 			match(WORD1);
+			getEword();
 			match(DESTINATION);
+			gen("TO");
 			after_destination();
 		break;
-		case PRONOUN:
+		case PRONOUN: //noun
 			match(PRONOUN);
+			getEword();
 			match(DESTINATION);
+			gen("TO");
 			after_destination();
 		break;
 		default:
@@ -246,20 +256,27 @@ void after_noun()
 	cout << "Processing (after_noun)" << endl;
 	switch(next_token())
 	{
-		case IS:
+		case IS: //be
 			match(IS);
+			gen("DESCRIPTION");
+			gen("TENSE");
 			match(PERIOD);
 		break;
-		case WAS:
+		case WAS: //be
 			match(WAS);
+			gen("DESCRIPTION");
+			gen("TENSE");
 			match(PERIOD);
 		break;
-		case DESTINATION:
+		case DESTINATION: //DESTINATION
 			match(DESTINATION);
+			getEword();
+			gen("TO");
 			after_destination();
 		break;
-		case OBJECT:
+		case OBJECT: //DESTINATION
 			match(OBJECT);
+			gen("OBJECT");
 			after_object();
 		break;
 		default:
@@ -276,17 +293,22 @@ void after_subject()
 	cout << "Processing (after_subject)" << endl;
 	switch(next_token())
 	{
-		case WORD2:
+		case WORD2: //verb
 			match(WORD2);
+			getEword();
+			gen("ACTION");
 			tense();
+			gen("TENSE");
 			match(PERIOD);
 		break;
-		case WORD1:
+		case WORD1: //noun
 			match(WORD1);
+			getEword();
 			after_noun();
 		break;
-		case PRONOUN:
+		case PRONOUN: //noun
 			match(PRONOUN);
+			getEword();
 			after_noun();
 			break;
 		break;
@@ -304,9 +326,13 @@ void S()
 	if(next_token() == CONNECTOR)
 	{
 		match(CONNECTOR);
+		getEword();
+		gen("CONNECTOR");
 	}
 	noun();
+	getEword();
 	match(SUBJECT);
+	gen("ACTOR");
 	after_subject();
 	//cout << endl << "***DONE Processing (S)" << endl << endl;
 }

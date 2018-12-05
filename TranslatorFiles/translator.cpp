@@ -36,7 +36,7 @@ string getEword()
 //    gen(line_type) - using the line type,
 //                     sends a line of an IR to translated.txt
 //                     (saved_E_word or saved_token is used)
-void gen(line_type)
+void gen(string line)
 {
 
 }
