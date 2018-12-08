@@ -6,15 +6,12 @@ using std::string;
 #define __PARSER_H__
 
 void setSavedLexeme(string lexeme);
+string getCurrentLexeme();
 void syntax_error1(tokentype thetype, string saved_lexeme); //when match() function does not match
 void syntax_error2(string pFunction, string saved_lexeme);
 tokentype next_token();
 bool match(tokentype expected);
 //10 <tense> := VERBPAST  | VERBPASTNEG | VERB | VERBNEG
-
-string getCurrentLexeme();
-
-void emptyParseQueue();
 
 void tense();
 

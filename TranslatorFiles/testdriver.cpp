@@ -18,10 +18,10 @@ int main()
     init(); //for reserved words list
 	string w;
 	string filename;
-    //ifstream fin;
-	// cout << "Enter the input file name: ";
-	// cin >> filename;
-    // readFile(filename);
+    ifstream fin;
+	cout << "Enter the input file name: ";
+	cin >> filename;
+    readFile(filename);
     int numberOfSentences = 1;
 	while(true)
 	{

@@ -2,6 +2,7 @@
 #include <fstream>
 #include <string>
 #include "parser.h"
+#include "Dictionary.h"
 using namespace std;
 
 // INSTRUCTION:  copy and edit your parser.cpp to create this file.
@@ -21,24 +22,42 @@ using namespace std;
 
 // ** Additions to parser.cpp here:
 
+ofstream translation("translation.txt");
 
-//NICK MURRIN, DEFINE getEword HERE. USE getCurrentLexeme() utility function to get the current lexeme from parser.cpp
-
-
+string saved_E_word;
+string saved_token;
 //    getEword - using the current lexeme, look up the English word
 //               in the Lexicon. If the current lexeme is there , then  save the result   
 //               in saved_E_word.
-string getEword()
+//Written by Nick Murrin & Nick Zimmermann
+void getEword()
 {
-
+    Dictionary d;
+    saved_E_word = d.translate(getCurrentLexeme());
 }
-//CLAY FLORES, DEFINE gen(line_type) HERE. CHANGE YOUR FUNCTION DEFINITION TO MATCH THE ONE IN translator.h
 //    gen(line_type) - using the line type,
 //                     sends a line of an IR to translated.txt
 //                     (saved_E_word or saved_token is used)
+//Written by Clay Flores
 void gen(string line)
 {
+    if(!translation.is_open())
+    {
 
+    }
+    else
+    {
+        if (line == "TENSE")
+        {
+            saved_token = "TENSE";
+            translation << saved_token;
+        }
+        else
+        {
+            saved_E_word = line + " ";
+            translation << saved_E_word;
+        }
+    }
 }
 
 // ** Be sure to put the name of the programmer above each function

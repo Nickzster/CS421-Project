@@ -5,7 +5,7 @@
 #include <string>
 using std::string;
 
-string getEword();
+void getEword();
 
 void gen(string line);
 
