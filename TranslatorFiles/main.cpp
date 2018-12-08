@@ -29,6 +29,7 @@ int main()
         cout << "***READING SENTENCE " << numberOfSentences << "***" <<  endl;
         cout << endl << "=======================================" << endl;
         S();
+        writeBlank();
         cout << "***DONE READING SENTENCE " << numberOfSentences << "***" << endl;
         numberOfSentences++;
 	}	

@@ -2,3 +2,7 @@
 /ScannerFiles/*.out
 /TranslatorFiles/*.out
 /ParserFiles/*.out
+*.o
+/ScannerFiles/*.o 
+/TranslatorFiles/*.o 
+/ParserFiles/*.o 

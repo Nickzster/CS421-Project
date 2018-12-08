@@ -22,6 +22,8 @@ using namespace std;
 string saved_lexeme;
 tokentype saved_token;
 bool token_available = false;
+
+string tokenNameB[30] = { "ERROR", "WORD1", "WORD2", "PERIOD", "VERB", "VERBNEG", "VERBPAST", "VERBPASTNEG", "IS", "WAS", "OBJECT", "SUBJECT", "DESTINATION", "PRONOUN", "CONNECTOR", "EOFM" }; //for the display names of tokens
 //queue parseQueue;
 
 string getCurrentLexeme()
@@ -29,7 +31,11 @@ string getCurrentLexeme()
 	return saved_lexeme;
 }
 
-string tokenNameB[30] = { "ERROR", "WORD1", "WORD2", "PERIOD", "VERB", "VERBNEG", "VERBPAST", "VERBPASTNEG", "IS", "WAS", "OBJECT", "SUBJECT", "DESTINATION", "PRONOUN", "CONNECTOR", "EOFM" }; //for the display names of tokens
+string getCurrentToken()
+{
+	return tokenNameB[saved_token];
+}
+
 
 // ----- Utility and Globals -----------------------------------
 
@@ -39,21 +45,7 @@ void setSavedLexeme(string lexeme)
 }
 
 
-void emptyParseQueue()
-{
-	// while(true)
-	// {
-	// 	string temp;
-	// 	if(!parseQueue.isEmpty())
-	// 	{
-	// 		parseQueue.remove(temp);
-	// 	}
-	// 	else
-	// 	{
-	// 		break;
-	// 	}
-	// }
-}
+
 // ** Need syntaxerror1 and syntaxerror2 functions (each takes 2 args)
 // ** Be sure to put the name of the programmer above each function
 // i.e. Done by: Clay Flores
@@ -269,8 +261,8 @@ void after_noun()
 			match(PERIOD);
 		break;
 		case DESTINATION: //DESTINATION
+			//getEword(); <- adding this makes it display an incorrect destination for sentence 7.
 			match(DESTINATION);
-			getEword();
 			gen("TO");
 			after_destination();
 		break;

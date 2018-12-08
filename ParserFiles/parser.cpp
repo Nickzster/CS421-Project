@@ -33,26 +33,7 @@ void setSavedLexeme(string lexeme)
 {
 	saved_lexeme = lexeme;
 }
-void pushParseQueue(string lexeme)
-{
-	//parseQueue.add(lexeme);
-}
 
-void emptyParseQueue()
-{
-	// while(true)
-	// {
-	// 	string temp;
-	// 	if(!parseQueue.isEmpty())
-	// 	{
-	// 		parseQueue.remove(temp);
-	// 	}
-	// 	else
-	// 	{
-	// 		break;
-	// 	}
-	// }
-}
 // ** Need syntaxerror1 and syntaxerror2 functions (each takes 2 args)
 // ** Be sure to put the name of the programmer above each function
 // i.e. Done by: Clay Flores

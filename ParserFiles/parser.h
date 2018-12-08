@@ -1,7 +1,6 @@
 #include "scanner.h"
 #include <iostream>
 using std::string;
-#include "queue.h"
 
 #ifndef __PARSER_H__
 #define __PARSER_H__
@@ -12,9 +11,6 @@ void syntax_error2(string pFunction, string saved_lexeme);
 tokentype next_token();
 bool match(tokentype expected);
 //10 <tense> := VERBPAST  | VERBPASTNEG | VERB | VERBNEG
-void pushParseQueue(string lexeme);
-
-void emptyParseQueue();
 
 void tense();
 

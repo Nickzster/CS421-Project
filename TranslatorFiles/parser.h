@@ -7,6 +7,7 @@ using std::string;
 
 void setSavedLexeme(string lexeme);
 string getCurrentLexeme();
+string getCurrentToken();
 void syntax_error1(tokentype thetype, string saved_lexeme); //when match() function does not match
 void syntax_error2(string pFunction, string saved_lexeme);
 tokentype next_token();

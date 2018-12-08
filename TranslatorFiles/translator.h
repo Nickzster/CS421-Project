@@ -9,4 +9,6 @@ void getEword();
 
 void gen(string line);
 
+void writeBlank();
+
 #endif

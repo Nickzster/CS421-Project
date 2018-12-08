@@ -1,26 +1,19 @@
 #include <string>
 #include <iostream>
-#include "Dictionary.h"
+#include "DICTIONARY.h"
 
 using namespace std;
 
-void testTranslate(string wordToTranslate, Dictionary &v)
-{
-    cout << "Word: " << wordToTranslate << " translates to " << v.translate(wordToTranslate) << endl;
-}
 
 int main()
 {
-    Dictionary v;
+    Dictionary d;
     string wordToTranslate;
-    v.printAll();
     while(true)
     {
         cout << "Enter a word to translate: ";
         cin >> wordToTranslate;
-        cout << endl;
-        testTranslate(wordToTranslate, v);
-        cout << endl << endl;
+        cout << wordToTranslate << " translated is " << d.lookUp(wordToTranslate) << endl;
     }
     return 0;
 }
