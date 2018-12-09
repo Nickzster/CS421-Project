@@ -13,7 +13,7 @@ using namespace std;
 string w;
 ifstream fin;
 
-void readFile(string filename)
+void readFile(string filename) //Initalizes the read file from any scope: Scanner, Parser, or Translator.
 {
 	fin.open(filename.c_str());
     //fin >> w;
@@ -35,7 +35,7 @@ void closeFile()
 // t ( s ( (a|e|i|o|u|I|E)^+ | (a|e|i|o|u|I|E)^+ n) ) ) | ( (a|e|i|o|u|I|E)^+ | (a|e|i|o|u|I|E)^+ n )
 // c h ( (a|e|i|o|u|I|E)^+ | (a|e|i|o|u|I|E)^+ n)
 
-bool word(string s)
+bool word(string s)//Word DFA
 {
 
 	int state = 0;
@@ -258,7 +258,7 @@ bool word(string s)
 
 // ** Add the PERIOD DFA here
 // ** Done by: Clay Flores
-bool period(string s)
+bool period(string s)//Period DFA
 {
 	int state = 0;
 	int charpos = 0;
@@ -296,7 +296,7 @@ vector <reservedWord> reservedWordsList;
 // a vector of pairs holds them all and is returned by the function
 // note about pairs: they use pairname.first or pairname.second to access elements in them
 
-void init()
+void init()//Initalizes the reserved words list.
 {
 
 	reservedWord r;
@@ -402,7 +402,7 @@ void init()
 // Gives back the token type and the word itself
 // ** Done by: Nick Zimmermann
  
-int scanner(tokentype& a, string& w)
+int scanner(tokentype& a, string& w) //Scanner function that calls the DFA(s).
 {
 
   // ** Grab the next word from the file via fin
@@ -463,37 +463,3 @@ int scanner(tokentype& a, string& w)
 
 
 }//the end of scanner
-
-
-/*
-// The temporary test driver to just call the scanner repeatedly  
-// This will go away after this assignment
-// DO NOT CHANGE THIS!!!!!! 
-// Done by:  Rika
-int main()
-{
-  tokentype thetype;
-  init();
-  string theword; 
-  string filename;
-
-  cout << "Enter the input file name: ";
-  cin >> filename;
-
-  fin.open(filename.c_str());
-
-  // the loop continues until eofm is returned.
-   while (true)
-    {
-       scanner(thetype, theword);  // call the scanner
-       if (theword == "eofm") break;  // stop now
-       cout << "========================================" << endl;
-       cout << "Type is:" << tokenName[thetype] << endl;
-       cout << "Word is:" << theword << endl;   
-       cout << "========================================" << endl << endl;
-    }
-
-   cout << "End of file is encountered." << endl;
-   fin.close();
-
-}// end */

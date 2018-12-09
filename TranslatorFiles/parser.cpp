@@ -22,28 +22,24 @@ using namespace std;
 string saved_lexeme;
 tokentype saved_token;
 bool token_available = false;
-
-string tokenNameB[30] = { "ERROR", "WORD1", "WORD2", "PERIOD", "VERB", "VERBNEG", "VERBPAST", "VERBPASTNEG", "IS", "WAS", "OBJECT", "SUBJECT", "DESTINATION", "PRONOUN", "CONNECTOR", "EOFM" }; //for the display names of tokens
-//queue parseQueue;
-
-string getCurrentLexeme()
-{
-	return saved_lexeme;
-}
-
-string getCurrentToken()
-{
-	return tokenNameB[saved_token];
-}
-
-
 // ----- Utility and Globals -----------------------------------
-
-void setSavedLexeme(string lexeme)
+void setSavedLexeme(string lexeme)//Sets the saved lexeme.
 {
 	saved_lexeme = lexeme;
 }
 
+string tokenNameB[30] = { "ERROR", "WORD1", "WORD2", "PERIOD", "VERB", "VERBNEG", "VERBPAST", "VERBPASTNEG", "IS", "WAS", "OBJECT", "SUBJECT", "DESTINATION", "PRONOUN", "CONNECTOR", "EOFM" }; //for the display names of tokens
+//queue parseQueue;
+
+string getCurrentLexeme() //Gets the current lexeme. Used by translator.
+{
+	return saved_lexeme;
+}
+
+string getCurrentToken() //Gets the current token. Used by translator.
+{
+	return tokenNameB[saved_token];
+}
 
 
 // ** Need syntaxerror1 and syntaxerror2 functions (each takes 2 args)

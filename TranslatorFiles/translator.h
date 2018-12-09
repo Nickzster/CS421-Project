@@ -5,10 +5,10 @@
 #include <string>
 using std::string;
 
-void getEword();
+void getEword(); 
 
 void gen(string line);
 
-void writeBlank();
+void writeBlank(); //Writes a blank to the output file. Used in main, after S() completes.
 
 #endif

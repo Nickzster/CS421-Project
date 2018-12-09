@@ -5,15 +5,15 @@ using std::string;
 #ifndef __PARSER_H__
 #define __PARSER_H__
 
-void setSavedLexeme(string lexeme);
-string getCurrentLexeme();
-string getCurrentToken();
+void setSavedLexeme(string lexeme); //Sets the saved lexeme.
+string getCurrentLexeme(); //Gets the current lexeme. Used by translator.
+string getCurrentToken(); //Gets the current token. Used by translator.
 void syntax_error1(tokentype thetype, string saved_lexeme); //when match() function does not match
-void syntax_error2(string pFunction, string saved_lexeme);
+void syntax_error2(string pFunction, string saved_lexeme); //When we hit a "default" in a switch.
 tokentype next_token();
 bool match(tokentype expected);
-//10 <tense> := VERBPAST  | VERBPASTNEG | VERB | VERBNEG
 
+//10 <tense> := VERBPAST  | VERBPASTNEG | VERB | VERBNEG
 void tense();
 
 //9 <be> ::=   IS | WAS
@@ -42,4 +42,5 @@ void after_subject();
 
 //1 <s> ::= [CONNECTOR] <noun> SUBJECT <after subject>
 void S();
+
 #endif
