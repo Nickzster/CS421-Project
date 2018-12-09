@@ -29,7 +29,6 @@ void setSavedLexeme(string lexeme)//Sets the saved lexeme.
 }
 
 string tokenNameB[30] = { "ERROR", "WORD1", "WORD2", "PERIOD", "VERB", "VERBNEG", "VERBPAST", "VERBPASTNEG", "IS", "WAS", "OBJECT", "SUBJECT", "DESTINATION", "PRONOUN", "CONNECTOR", "EOFM" }; //for the display names of tokens
-//queue parseQueue;
 
 string getCurrentLexeme() //Gets the current lexeme. Used by translator.
 {
@@ -118,7 +117,7 @@ bool match(tokentype expected)
 // ** Be sure to put the corresponding grammar rule above each function
 // i.e. Grammar: Nick Zimmermann
 // ** Be sure to put the name of the programmer above each function
-// i.e. Done by: Nick Zimmermann
+// i.e. All 10 Done by: Nick Zimmermann
 
 //10 <tense> := VERBPAST  | VERBPASTNEG | VERB | VERBNEG
 void tense()
@@ -187,7 +186,7 @@ void noun()
 	}
 	//cout << endl << "***DONE Processing (noun)" << endl << endl;
 }
-//6 <after verb> ::= <tense> PERIOD
+//6 <after verb> ::= <tense> #gen("TENSE")# PERIOD
 void after_verb()
 {
 	cout << "Processing (after_verb)" << endl;
@@ -196,7 +195,7 @@ void after_verb()
 	match(PERIOD);
 	//cout << endl << "***DONE Processing (after_verb)" << endl << endl;
 }
-//5 <after destination> ::= <verb> <after verb> PERIOD
+//5 <after destination> ::= <verb> #getEword# #gen("ACTION")# <after verb>
 void after_destination()
 {
 	cout << "Processing (after_destination)" << endl;
@@ -206,7 +205,7 @@ void after_destination()
 	after_verb();
 	//cout << endl << "***DONE Processing (after_destination)" << endl << endl;
 }
-//4 <after object> ::= <verb> <after verb> | <noun> DESTINATION <after destination>
+//4 <after object> ::= <verb> #getEword# #gen("ACTION")# <after verb> | <noun> #getEword# DESTINATION #gen("TO")# <after destination>
 void after_object()
 {	
 	cout << "Processing (after_object)" << endl;
@@ -238,7 +237,7 @@ void after_object()
 	}
 	//cout << endl << "***DONE Processing (after_object)" << endl << endl;
 }
-//3 <after noun> ::= <be> PERIOD  | DESTINATION <after destination> | OBJECT <after object>
+//3 <after noun> ::= <be> #gen("DESCRIPTION")# #gen("TENSE")# PERIOD  | #getEword# DESTINATION #gen("TO")# <after destination> | OBJECT #gen("OBJECT")# <after object>
 void after_noun()
 {
 	cout << "Processing (after_noun)" << endl;
@@ -275,7 +274,7 @@ void after_noun()
 	//cout << endl << "***DONE Processing (after_noun)" << endl << endl;
 
 }
-//2 <after subject> ::= <verb> <tense> PEROD | <noun> <after noun>
+//2 <after subject> ::= <verb> #getEword# #gen("ACTION")# <tense> #gen("TENSE")# PERIOD | <noun> #getEword# <after noun>
 void after_subject()
 {
 	cout << "Processing (after_subject)" << endl;
@@ -306,7 +305,7 @@ void after_subject()
 	}
 	//cout << endl << "***DONE Processing (after_subject)" << endl << endl;
 }
-//1 <s> ::= [CONNECTOR] <noun> SUBJECT <after subject>
+//1 <s> ::= [CONNECTOR #getEword# #gen("CONNECTOR")#] <noun> #getEword# SUBJECT #gen("ACTOR")# <after subject>
 void S()
 {
 	// parseQueue.remove(saved_lexeme);
@@ -324,4 +323,3 @@ void S()
 	after_subject();
 	//cout << endl << "***DONE Processing (S)" << endl << endl;
 }
-//

@@ -1,0 +1,323 @@
+Script started on Sat 08 Dec 2018 10:32:51 PM STD
+]0;Nick@Nick-PC: /mnt/c/users/nick/documents/_CSUSM-Projects/FALL2018/CS421-Project/TranslatorFiles[01;32mNick@Nick-PC[00m:[01;34m/mnt/c/users/nick/documents/_CSUSM-Projects/FALL2018/CS421-Project/TranslatorFiles[00m$ ./G 16S[K[K[K16Translator [K
+Reading lexicon.txt...
+DONE!
+Enter the input file name: po  partCtest1
+Successfully opened partCtest1 initalizing to: 
+=======================================
+
+***READING SENTENCE 1***
+
+=======================================
+Processing (S)
+Scanner called using word: watashi
+Processing (noun)
+Matched PRONOUN<<<<<
+Scanner called using word: wa
+Matched SUBJECT<<<<<
+Processing (after_subject)
+Scanner called using word: rika
+Matched WORD1<<<<<
+**From Dictionary::lookUp: rika is not in the dictionary.***
+Processing (after_noun)
+Scanner called using word: desu
+Matched IS<<<<<
+Scanner called using word: .
+Matched PERIOD<<<<<
+***DONE READING SENTENCE 1***
+=======================================
+
+***READING SENTENCE 2***
+
+=======================================
+Processing (S)
+Scanner called using word: watashi
+Processing (noun)
+Matched PRONOUN<<<<<
+Scanner called using word: wa
+Matched SUBJECT<<<<<
+Processing (after_subject)
+Scanner called using word: sensei
+Matched WORD1<<<<<
+Processing (after_noun)
+Scanner called using word: desu
+Matched IS<<<<<
+Scanner called using word: .
+Matched PERIOD<<<<<
+***DONE READING SENTENCE 2***
+=======================================
+
+***READING SENTENCE 3***
+
+=======================================
+Processing (S)
+Scanner called using word: rika
+Processing (noun)
+Matched WORD1<<<<<
+**From Dictionary::lookUp: rika is not in the dictionary.***
+Scanner called using word: wa
+Matched SUBJECT<<<<<
+Processing (after_subject)
+Scanner called using word: gohan
+Matched WORD1<<<<<
+Processing (after_noun)
+Scanner called using word: o
+Matched OBJECT<<<<<
+Processing (after_object)
+Scanner called using word: tabE
+Matched WORD2<<<<<
+Processing (after_verb)
+Processing (tense)
+Scanner called using word: masu
+Matched VERB<<<<<
+Scanner called using word: .
+Matched PERIOD<<<<<
+***DONE READING SENTENCE 3***
+=======================================
+
+***READING SENTENCE 4***
+
+=======================================
+Processing (S)
+Scanner called using word: watashi
+Processing (noun)
+Matched PRONOUN<<<<<
+Scanner called using word: wa
+Matched SUBJECT<<<<<
+Processing (after_subject)
+Scanner called using word: tesuto
+Matched WORD1<<<<<
+Processing (after_noun)
+Scanner called using word: o
+Matched OBJECT<<<<<
+Processing (after_object)
+Scanner called using word: seito
+Matched WORD1<<<<<
+Scanner called using word: ni
+Matched DESTINATION<<<<<
+Processing (after_destination)
+Processing (verb)
+Scanner called using word: agE
+Matched WORD2<<<<<
+Processing (after_verb)
+Processing (tense)
+Scanner called using word: mashita
+Matched VERBPAST<<<<<
+Scanner called using word: .
+Matched PERIOD<<<<<
+***DONE READING SENTENCE 4***
+=======================================
+
+***READING SENTENCE 5***
+
+=======================================
+Processing (S)
+Scanner called using word: shikashi
+Matched CONNECTOR<<<<<
+Processing (noun)
+Scanner called using word: seito
+Matched WORD1<<<<<
+Scanner called using word: wa
+Matched SUBJECT<<<<<
+Processing (after_subject)
+Scanner called using word: yorokobI
+Matched WORD2<<<<<
+Processing (tense)
+Scanner called using word: masendeshita
+Matched VERBPASTNEG<<<<<
+Scanner called using word: .
+Matched PERIOD<<<<<
+***DONE READING SENTENCE 5***
+=======================================
+
+***READING SENTENCE 6***
+
+=======================================
+Processing (S)
+Scanner called using word: dakara
+Matched CONNECTOR<<<<<
+Processing (noun)
+Scanner called using word: watashi
+Matched PRONOUN<<<<<
+Scanner called using word: wa
+Matched SUBJECT<<<<<
+Processing (after_subject)
+Scanner called using word: kanashii
+Matched WORD1<<<<<
+Processing (after_noun)
+Scanner called using word: deshita
+Matched WAS<<<<<
+Scanner called using word: .
+Matched PERIOD<<<<<
+***DONE READING SENTENCE 6***
+=======================================
+
+***READING SENTENCE 7***
+
+=======================================
+Processing (S)
+Scanner called using word: soshite
+Matched CONNECTOR<<<<<
+Processing (noun)
+Scanner called using word: rika
+Matched WORD1<<<<<
+**From Dictionary::lookUp: rika is not in the dictionary.***
+Scanner called using word: wa
+Matched SUBJECT<<<<<
+Processing (after_subject)
+Scanner called using word: toire
+Matched WORD1<<<<<
+Processing (after_noun)
+Scanner called using word: ni
+Matched DESTINATION<<<<<
+Processing (after_destination)
+Processing (verb)
+Scanner called using word: ikI
+Matched WORD2<<<<<
+Processing (after_verb)
+Processing (tense)
+Scanner called using word: mashita
+Matched VERBPAST<<<<<
+Scanner called using word: .
+Matched PERIOD<<<<<
+***DONE READING SENTENCE 7***
+=======================================
+
+***READING SENTENCE 8***
+
+=======================================
+Processing (S)
+Scanner called using word: rika
+Processing (noun)
+Matched WORD1<<<<<
+**From Dictionary::lookUp: rika is not in the dictionary.***
+Scanner called using word: wa
+Matched SUBJECT<<<<<
+Processing (after_subject)
+Scanner called using word: nakI
+Matched WORD2<<<<<
+Processing (tense)
+Scanner called using word: mashita
+Matched VERBPAST<<<<<
+Scanner called using word: .
+Matched PERIOD<<<<<
+***DONE READING SENTENCE 8***
+=======================================
+
+***READING SENTENCE 9***
+
+=======================================
+Processing (S)
+***Lexical Error: eofm is not a valid token.***
+Scanner called using word: eofm
+SUCCESSFULLY PARSED STORY!
+]0;Nick@Nick-PC: /mnt/c/users/nick/documents/_CSUSM-Projects/FALL2018/CS421-Project/TranslatorFiles[01;32mNick@Nick-PC[00m:[01;34m/mnt/c/users/nick/documents/_CSUSM-Projects/FALL2018/CS421-Project/TranslatorFiles[00m$ par tCtest2
+partCtest2: command not found
+]0;Nick@Nick-PC: /mnt/c/users/nick/documents/_CSUSM-Projects/FALL2018/CS421-Project/TranslatorFiles[01;32mNick@Nick-PC[00m:[01;34m/mnt/c/users/nick/documents/_CSUSM-Projects/FALL2018/CS421-Project/TranslatorFiles[00m$ parttCtest2[A]0;Nick@Nick-PC: /mnt/c/users/nick/documents/_CSUSM-Projects/FALL2018/CS421-Project/TranslatorFiles[01;32mNick@Nick-PC[00m:[01;34m/mnt/c/users/nick/documents/_CSUSM-Projects/FALL2018/CS421-Project/TranslatorFiles[00m$ ./G16Translator
+Reading lexicon.txt...
+DONE!
+Enter the input file name: op  partCtest2
+Successfully opened partCtest2 initalizing to: 
+=======================================
+
+***READING SENTENCE 1***
+
+=======================================
+Processing (S)
+Scanner called using word: soshite
+Matched CONNECTOR<<<<<
+Processing (noun)
+Scanner called using word: watashi
+Matched PRONOUN<<<<<
+Scanner called using word: wa
+Matched SUBJECT<<<<<
+Processing (after_subject)
+Scanner called using word: rika
+Matched WORD1<<<<<
+**From Dictionary::lookUp: rika is not in the dictionary.***
+Processing (after_noun)
+Scanner called using word: desu
+Matched IS<<<<<
+Scanner called using word: ne
+SYNTAX ERROR: expected PERIOD but found ne
+Exiting Program
+]0;Nick@Nick-PC: /mnt/c/users/nick/documents/_CSUSM-Projects/FALL2018/CS421-Project/TranslatorFiles[01;32mNick@Nick-PC[00m:[01;34m/mnt/c/users/nick/documents/_CSUSM-Projects/FALL2018/CS421-Project/TranslatorFiles[00m$ ./G116Translator
+Reading lexicon.txt...
+DONE!
+Enter the input file name: partCtest3
+Successfully opened partCtest3 initalizing to: 
+=======================================
+
+***READING SENTENCE 1***
+
+=======================================
+Processing (S)
+Scanner called using word: dakara
+Matched CONNECTOR<<<<<
+Processing (noun)
+Scanner called using word: watashi
+Matched PRONOUN<<<<<
+Scanner called using word: de
+SYNTAX ERROR: expected SUBJECT but found de
+Exiting Program
+]0;Nick@Nick-PC: /mnt/c/users/nick/documents/_CSUSM-Projects/FALL2018/CS421-Project/TranslatorFiles[01;32mNick@Nick-PC[00m:[01;34m/mnt/c/users/nick/documents/_CSUSM-Projects/FALL2018/CS421-Project/TranslatorFiles[00m$ par tCtest4
+partCtest4: command not found
+]0;Nick@Nick-PC: /mnt/c/users/nick/documents/_CSUSM-Projects/FALL2018/CS421-Project/TranslatorFiles[01;32mNick@Nick-PC[00m:[01;34m/mnt/c/users/nick/documents/_CSUSM-Projects/FALL2018/CS421-Project/TranslatorFiles[00m$ parttCtest4[A]0;Nick@Nick-PC: /mnt/c/users/nick/documents/_CSUSM-Projects/FALL2018/CS421-Project/TranslatorFiles[01;32mNick@Nick-PC[00m:[01;34m/mnt/c/users/nick/documents/_CSUSM-Projects/FALL2018/CS421-Project/TranslatorFiles[00m$ ./G16Translator
+Reading lexicon.txt...
+DONE!
+Enter the input file name: partCtest4
+Successfully opened partCtest4 initalizing to: 
+=======================================
+
+***READING SENTENCE 1***
+
+=======================================
+Processing (S)
+Scanner called using word: watashi
+Processing (noun)
+Matched PRONOUN<<<<<
+Scanner called using word: wa
+Matched SUBJECT<<<<<
+Processing (after_subject)
+Scanner called using word: rika
+Matched WORD1<<<<<
+**From Dictionary::lookUp: rika is not in the dictionary.***
+Processing (after_noun)
+Scanner called using word: mashita
+ERROR: unexpected mashita found in after_noun
+Exiting Program
+]0;Nick@Nick-PC: /mnt/c/users/nick/documents/_CSUSM-Projects/FALL2018/CS421-Project/TranslatorFiles[01;32mNick@Nick-PC[00m:[01;34m/mnt/c/users/nick/documents/_CSUSM-Projects/FALL2018/CS421-Project/TranslatorFiles[00m$ ./G116Translator
+Reading lexicon.txt...
+DONE!
+Enter the input file name: partCtest5
+Successfully opened partCtest5 initalizing to: 
+=======================================
+
+***READING SENTENCE 1***
+
+=======================================
+Processing (S)
+Scanner called using word: wa
+Processing (noun)
+ERROR: unexpected wa found in noun
+Exiting Program
+]0;Nick@Nick-PC: /mnt/c/users/nick/documents/_CSUSM-Projects/FALL2018/CS421-Project/TranslatorFiles[01;32mNick@Nick-PC[00m:[01;34m/mnt/c/users/nick/documents/_CSUSM-Projects/FALL2018/CS421-Project/TranslatorFiles[00m$ ./G116Translator
+Reading lexicon.txt...
+DONE!
+Enter the input file name: partCtest5 6
+Successfully opened partCtest6 initalizing to: 
+=======================================
+
+***READING SENTENCE 1***
+
+=======================================
+Processing (S)
+***Lexical Error: apple is not a valid token.***
+Scanner called using word: apple
+Processing (noun)
+ERROR: unexpected apple found in noun
+Exiting Program
+]0;Nick@Nick-PC: /mnt/c/users/nick/documents/_CSUSM-Projects/FALL2018/CS421-Project/TranslatorFiles[01;32mNick@Nick-PC[00m:[01;34m/mnt/c/users/nick/documents/_CSUSM-Projects/FALL2018/CS421-Project/TranslatorFiles[00m$ exi t
+exit
+
+Script done on Sat 08 Dec 2018 10:33:49 PM STD

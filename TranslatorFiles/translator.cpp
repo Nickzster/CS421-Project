@@ -25,7 +25,7 @@ using namespace std;
 ofstream translation("translation.txt");
 
 string saved_E_word;
-string saved_token;
+string savedToken;
 Dictionary d;
 //    getEword - using the current lexeme, look up the English word
 //               in the Lexicon. If the current lexeme is there , then  save the result   
@@ -49,8 +49,8 @@ void gen(string line)
     {
         if (line == "TENSE")
         {
-            saved_token = "TENSE: " + getCurrentToken();
-            translation << saved_token << endl;
+            savedToken = "TENSE: " + getCurrentToken();
+            translation << savedToken << endl;
         }
         else
         {
