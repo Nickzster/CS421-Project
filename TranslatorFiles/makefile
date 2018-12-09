@@ -1,7 +1,7 @@
 CXXFLAGS = -std=c++11
 
 BUILD: DICTIONARY.o scanner.o parser.o translator.o main.o
-	g++ -O -o G16Translator DICTIONARY.o scanner.o parser.o translator.o main.o
+	g++ -O -o group16project DICTIONARY.o scanner.o parser.o translator.o main.o
 
 DICTIONARY.o: DICTIONARY.cpp DICTIONARY.h
 	g++ -c -std=c++11 DICTIONARY.cpp
@@ -14,4 +14,4 @@ translator.o: translator.h translator.cpp
 main.o: main.cpp
 	g++ -c main.cpp		
 clean: 
-	rm *.o G16Translator
+	rm *.o group16project
