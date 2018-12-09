@@ -1,25 +1,26 @@
 
-GROUP#
+GROUP#16
 
 1.State who did what by indicating: 
   Member A tasks (getEword) - who: Nick Murrin
   Member B tasks (gen) - who: Clay Flores
-  Member C tasks (dictionary) - who: Nick Zimmerman
+  Member C tasks (dictionary) - who: Nick Zimmermann
   Who updated which parser functions with getEword and gen
-  calls? 
-Nick M. did getEWord and Clay did gen.
+  calls? Nick Zimmermann
+
 If the member did not fully contribute to the assigned part,
 do not list his/her name!!!!!
 
 2. Each person came to the meeting?
-Yes. 
+Yes.
 3. You have included all the required comments?
    (updated the grammar rules in comments?)
-In progress.
+Yes.
 4. The project produced correct output for all 6
    test cases?
-In progress.
+Yes.
 5. If you did EC error recovery,
    test 7 worked and produced translated.txt
    and errors.txt?
-We are not going to do any extra credit, unfortunately, due to lack of time. 
+We did not do extra credit.
+
